@@ -1,0 +1,53 @@
+﻿@page
+
+@model VideoModel
+@{
+    ViewData["Title"] = "video";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Opencv.js exercise #3: access the camera</title>
+
+    <style type="text/css">
+        #inputINT1 {
+            width: 3em;
+        }
+
+        #inputINT2 {
+            width: 3em;
+        }
+    </style>
+
+    <meta charset="utf-8">
+</head>
+<body>
+    <section id="cameraSection">
+        <h2 id='status'>opencv.js is loading...</h2>
+        <div>
+
+            <button id="enableWebcamButton" disabled>Open the camera</button>
+            <button id="disableWebcamButton" disabled>Close the camera</button><br /><br />
+
+            <input type="number" id="inputINT1" value="100"></button>
+            ~
+            <input type="number" id="inputINT2" value="200"></button>
+            <button id="INPUT">Enter threshold(0~255)</button>
+
+        </div>
+        <div id="liveView">
+            <video id="webcam" autoplay width="320" height="240"></video>
+            <canvas id="outputCanvas"></canvas><br />
+
+            <canvas id="outputCanvas2"></canvas>
+            <canvas id="outputCanvas3"></canvas>
+        </div>
+    </section>
+
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="camOpencv.js"></script>
+    <script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</body>
+</html>
